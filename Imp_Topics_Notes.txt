@@ -1,0 +1,99 @@
+=> SDLC (Software Development LifeCycle)
+1.Requirement Gthering
+2.Planning
+3.Design
+4.Development
+5.Testing
+6.Deploy and Maintain
+
+=> Models of SDLC  (based on time.cost and risk):-
+                        1.WaterFall – Cannot accommodate changes during the process-TimeTaking.
+                        2.Agile    - Process will be done based on feedback 
+=> Continuous Integration – after every commit, code  will be build and tested – No waiting-Automation
+                  Code =>Fetch=>Build=>Test=>Notify=>FeedBack=>Repeat till Success.
+=>Continuous Delivery – 
+                      - system automation :- ansible , puppet amd chef
+                      - Cloud Automation :- Terraform and Cloud Formation
+                      - CI/CD Automation :- Jenkins and Octopus Deploy
+=> Hypervisor: hypervisor allows one host computer to support multiple guest VMs by virtually sharing its resources, such as memory and processing.
+                         - Allocating or dividing disk of main computer for creation of more virtual, computers.
+                         Type 1 Hypervisor :- VMs directly build on Hypervisor
+                         Type 2 Hypervisor :- VMs is created on Hypervisor by using Host OS as base.
+
+=>Vagrant : it is a tool for building and managing virtual machine environments with the help of Hypervisor. 
+                     It is used above the Hypervisors like virtualbox and vwware.
+
+                    Vagrant Commands:
+o	Vagrant Init – place file in directory
+o	Vagrant up – download the image from Vagrant cloud
+o	Vagrant status- to check the VM status
+o	Vagrant Halt – To Turn off VM
+o	Vagrant Destroy – To terminate an VM
+
+==> GIT : -
+	Git is a distributed version control system, which means that a local clone of the
+project is a complete version control repository. These fully functional local repositories make it easy to work offline or remotely.
+
+To set your global username/email configuration:
+
+Open the command line.
+  Set your username:      git config --global user.name "FIRST_NAME LAST_NAME"
+  Set your email address: git config --global user.email "MY_NAME@example.com"
+
+
+To set repository-specific username/email configuration:
+From the command line, change into the repository directory.
+  Set your username:       git config user.name "FIRST_NAME LAST_NAME"
+  Set your email address:  git config user.email "MY_NAME@example.com"
+Verify your configuration by displaying your configuration file:
+  cat .git/config
+
+
+Github: -
+ GitHub facilitates social coding by providing a hosting service and web interface for the Git code repository, as well as management tools for collaboration
+Cloud Based Storage for Code
+
+Version control :it is a system which is responsible for managing our codebases, we can upload 
+ our code files, than we can also manage the changes to the code file, you can document about the 
+the codebase,you can also manage large scale projects or websites or other important informations.
+
+Github => you go to google , github.com , signin and than you are in github homepage.
+github : remote things
+
+
+git => in your laptop ., this is local git 
+
+
+first step : GITHUB
+we are going to create a remote repository/folder with public access.
+
+now we go to local, and create some folder .
+we go to folder and in the address bar of that folder ,we write cmd
+commmand prompt will open and than we write code .
+We open VS code in that particular folder
+created a text and python file
+FOLDER LOCAL -LearningGit ====> REMOTE github Repsitory LearningGit
+
+LOCAL git =========>>>>> github.com our account and repository
+
+to write git commands , first way is to open cmd in the folder 
+you can open vscode in the folder , than go to vscode terminal and than write the commands
+STARTING WITH GIT COMMAND
+
+      - git init : it will create a .git hidden folder inside your main folder
+      - .git hidden folder is empty ,it does not have any info.
+      
+      - git status : it will help you find out if files in your folder are being tracked by git or not
+      - git add . : it will help you to add and track your files in git.
+      
+      - git commit -m "learning funcdamentals of git" : it tell git that whatever files you added are perfectly fine to be uploaded and i am commiting to this changes.
+      - git remote add origin https://github.com/snehal-herovired/LearningGIt.git : it will establish a connection between local git and remote github.com repository.
+      - git push origin master : it will push/upload our all code which we commited to remote repository.
+
+
+
+
+
+
+
+
