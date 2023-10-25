@@ -1,0 +1,107 @@
+
+=>Linux :- Open source software(we can modify, we will have the access of the software code)
+                 Some Important Directories
+•	Home Directories: /root/home/username
+•	User Executable: /bin; /usr/bin, /usr/local/bin
+•	System Executables: /sbin, /usr/sbin. /usr/local/sbin
+•	Other Mountpoints: /media. /mnt
+•	Configuration: /etc
+•	Temporary Files: /tmp
+•	Kernels and Bootloader: /boot
+•	Server Data: /var, /srv
+•	System Information: /proc, /sys
+•	Shared Libraries: /lib, /usr/lib, /usr/local/lib
+
+Commands :- 
+            Command –help ( gives all relative commands)
+    1.	Sudo -I – root user
+    2.	Ls – list files
+    3.	Pwd – present working directory
+    4.	Touch – create  a file ( [start..end])
+    5.	cp (cp source destination) – copy file
+    6.	cp -r (cp -r source destination) – copy directory
+    7.	mv (sourcefile destination directory) – mv (*.extension) destination dir – move files
+    8.	rm (rm file name) – remove file
+    9.	rm ( rm -r dir name) – remove directory
+    10.	rm -r  (or) rm -rf  --- remove all files in that directory  - sol-: disc hardisc restoration 
+    11.	cat file_name (inspect a file)
+
+VIM Editor :
+sudo yum install vim -y
+    1.	command mode (default)         
+    (:w-save , :q-quit , :q! – force quit)
+    2.	 Insert mode  --  (edit purpose)       
+    3.	 Extended mode 
+        •	:se nu  - set line numbers
+        •	Shift+g – last line
+        •	Shift +gg – firstline
+        •	Copy - Go to line u want to copy press (num)YY   num==number of lines to copy
+        •	Paste – p to paste the copied line below the line where you are.
+                     P to paste the copied line above the line where you are.
+        •	Cut Paste – use DD for delete or cut and use P to paste
+        •	Undo – press u
+        •	Search - /  and enter
+
+	Search in entire folder:
+    1.	grep -i word filename – search In that file
+    2.	grep -i word *  - search in all the directory
+    3.	grep -iR word * - searches in all directories linked.
+    4.	grep -vi word direcname – shows everyline without that word.
+
+	File Reading:
+
+    1.	Head  n filename – displays n first lines of that file
+    2.	Tail n filename  - displays n line from the last of that file.
+    3.	Tail -f filename  - continuously shows the changes made in that file.
+    4.	Cut -d ”De-limiter”(: - ; >) -f “n” (filename or path) ----slicing and segregating data.
+    5.	Awk -F ‘ “De-Limiter” ‘ ‘{print $n}’ filename or path – intelligent segregation method
+                     awk -F':' '{print $4}' /etc/passwd
+    6.	: %/word/replacement/g – in VIM .we search  word and replace it with the replacement.
+    7.	sed  's/word/replacement/g'  filename – to see after word replacement in file or files
+    8.	sed -i 's/word/replacement/g'  filename – word replacement in file or files and saves.
+    9.	Wc -l filename  -- counts the number of lines in the file.
+    10.	ls | wc -l  -- will count the number of items in that directory.
+    11.	ls | grep “name” -  will return all files starts with that name
+    12.	“files to search”| grep -I “name”  - will act as in operator
+
+	System commands:
+    1.	Free -m  -- shows memory utilisation
+    2.	Df -h – shows hard disc partitioning
+    3.	Uptime – give the system uptime.
+	Redirections : - used to redirect the output into another file without displaying.
+    1.	Output > destination    - will rewrite the content of destination file.
+    2.	Output >> destination – will append the content to the destination file.
+
+	Finding an file:
+    1.	find  /folder -name “name”
+    2.	locate “name”--- yum install mlocate -y – update db(for existing data)
+	Users & Groups:
+    1.	Root – 0Uid -0Gid - /bin/bash
+    2.	Regular user – 1000-60000uid & Gid - /bin/bash
+    3.	Service – 1-999Uid&Gid - /sbin/nologin
+Commands:
+    -	Useradd  name – new user will be created
+    -	Groupadd name  - new group will be created
+    -	Usermod -aG groupname username   -- user will be added into that group
+    -	Lsof -u username – shows all the files opened by that user.
+    -	Userdel username – to delete (without home directory)
+    -	Userdel -r username – to delete (with home directory
+    -	Groupdel – delete users by file
+	File permissions :
+1.	ls -ld filename – to check the file permissions
+2.	chown username:group filename  -- to change the ownership
+3.	chown -R username:group filename – to give ownership to all sub directories inside
+4.	chmod o-(r,w,x) filename – to remove permission of other         |
+5.	chmod g-(r,w,x) filename – to remove permission of group         |  -- remove 
+6.	chmod u-(r,w,x) filename – to remove permission of user          |
+
+7.	chmod o+(r,w,x) filename – to add permission of other            |
+8.	chmod g+(r,w,x) filename – to add permission of group            |  --  add
+9.	chmod u+(r,w,x) filename – to add permission of user             |
+                  -  Numeric Method:
+                              1. 4- read
+                              2. 2-write
+                              3. 1- execute 
+                                         - chmod 777 filename – will give full permissions to all (ugo)
+                                         - chmod 770 filename – will give full permissions to ug and 0 to others
+                                         - chmod -R 777 filename – recursive changes in sub directories
